@@ -1,0 +1,10 @@
+    <!-- Цикл получения постов -->
+    <?php if(have_posts()) : ?>
+        <?php $i = 1; while (have_posts()) : ?>
+            <?php the_post(); ?>
+                <h3><?=$i;?>) <?php the_title(); ?></h3>
+    <?php $i++; endwhile; ?>
+    <!-- Условие выхода -->
+    <?php else: ?>
+        <p>Nothing posts in there</p>
+    <?php endif; ?>
