@@ -1,4 +1,4 @@
-<!-- Single-шаблон -->
+<!-- Single-шаблон для статьи -->
 <?php get_header(); ?>
     <h2>Test</h2>
     <div class="container">
