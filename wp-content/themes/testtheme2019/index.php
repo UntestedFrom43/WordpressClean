@@ -1,14 +1,34 @@
 <?php get_header(); ?>
     <h2>Test</h2>
 
-    <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+    <div class="container">
+        <div class="row">
+            <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
         <!-- Посты -->
-        <h4><?php the_title(); ?></h4>
-        <?php endwhile; ?>
-        <!-- Навигация-->
-        <?php else: ?>
-        <!-- Постов нет -->
-        <p>No post in there...</p>
-    <?php endif; ?>
+        <div class="col-md-12">
+            <div class="card">
+            <img src="..." class="card-img-top" alt="Место для миниатюры">
+                <div class="card-body">
+                
+                <h5 class="card-title">
+                    <a href="<?php the_permalink(); ?>">
+                        <?php the_title(); ?>
+                    </a>
+                </h5>
+
+                <p class="card-text"><?php the_content('Читать статью далее...'); ?></p>
+                <a href="<?php the_permalink(); ?>" class="btn btn-primary">Перейти в статью</a>
+                
+                </div>
+            </div>
+        </div>
+            <?php endwhile; ?>
+            <!-- Навигация-->
+            <?php else: ?>
+            <!-- Постов нет -->
+            <p>No post in there...</p>
+            <?php endif; ?>    
+        </div>
+    </div>
 
 <?php get_footer();?>

@@ -4,3 +4,7 @@ Author: Ketzenkrad
 Author URI: https://twitter.com/
 Description: Описание тестовой темы
 */
+
+.card {
+    margin-bottom: 30px;
+}
