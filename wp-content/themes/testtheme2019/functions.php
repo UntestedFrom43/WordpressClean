@@ -34,6 +34,11 @@ function testtheme2019_setup(){
     add_image_size('my-thumbname', 100, 100);
     //Поддержка тайтла
     add_theme_support('title-tag');
+    //Регистрация новых меню
+    register_nav_menus( array(
+        'header_menu' => 'Меню header',
+        'footer_menu' => 'Меню footer',
+    ) );
 }
 add_action('after_setup_theme', 'testtheme2019_setup');
 

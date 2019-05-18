@@ -25,6 +25,16 @@
                 <span class="navbar-toggler-icon"></span>
     </button>
 
+    <!-- Вызов меню header -->
+    <?php 
+        wp_nav_menu( array(
+            'theme_location' => 'header_menu',
+            //'menu' => '',
+            //'container' => 'nav',
+            'container_class' => 'collapse navbar-collapse',
+       ) );
+    ?>
+
     <!-- <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
