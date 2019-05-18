@@ -1,40 +1,15 @@
 /*
 Theme Name: Тестовая тема
-Author: Ketzenkrad
-Author URI: https://twitter.com/
+Author: webformyself
+Author URI: https://webformyself.com/
 Description: Описание тестовой темы
 */
 
-
-/* Wrapper navbar */
-
-.wrapper {
-    margin: 14px 2px;
-    margin-bottom: 10px;
-}
-
-.container {
-    margin-top: 16px;
-}
-
-.desc {
-    display: inline-block;
-    padding-top: .3125rem;
-    padding-bottom: .3125rem;
-    margin-right: 1rem;
-    font-size: 1.25rem;
-    line-height: inherit;
-    white-space: nowrap;
-}
-
-
-/* Генерированные списки стилей из Bootstrap 4 */
-
-.card {
+.card{
     margin-bottom: 30px;
 }
 
-img {
+img{
     max-width: 100%;
     height: auto;
 }
@@ -46,19 +21,16 @@ ul.page-numbers {
     border-radius: .25rem;
     justify-content: center !important;
 }
-
 ul.page-numbers li:first-child .page-link {
     margin-left: 0;
     border-top-left-radius: .25rem;
     border-bottom-left-radius: .25rem;
 }
-
 ul.page-numbers li:not(:disabled):not(.disabled) {
     cursor: pointer;
 }
-
 a.page-numbers,
-span.current {
+span.current{
     position: relative;
     display: block;
     padding: .5rem .75rem;
@@ -68,15 +40,13 @@ span.current {
     background-color: #fff;
     border: 1px solid #dee2e6;
 }
-
-span.current {
+span.current{
     color: #fff;
     background-color: #007bff;
     border-color: #007bff;
     cursor: default;
 }
-
-span.dots {
+span.dots{
     position: relative;
     display: block;
     padding: .5rem .75rem;
@@ -87,7 +57,6 @@ span.dots {
     border: 1px solid #dee2e6;
     cursor: default;
 }
-
-nav.navigation {
+nav.navigation{
     width: 100%;
 }

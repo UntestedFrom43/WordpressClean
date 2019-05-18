@@ -32,6 +32,8 @@ function testtheme2019_setup(){
     //Функция мультиформатов для изображений;
     //Собственный тип миниатюр; регистрация
     add_image_size('my-thumbname', 100, 100);
+    //Поддержка тайтла
+    add_theme_support('title-tag');
 }
 add_action('after_setup_theme', 'testtheme2019_setup');
 

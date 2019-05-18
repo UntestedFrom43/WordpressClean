@@ -1,6 +1,6 @@
     <!-- Стартовый шаблон -->
     <?php get_header(); ?>
-    <h2>Main</h2>
+    <!-- <h2>Main</h2> -->
     <div class="container">
         <div class="row">
             <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
@@ -39,8 +39,8 @@
             <?php endwhile; ?>
             <!-- Навигация-->
             <?php the_posts_navigation(array(
-                'show_all' => false,
-                'end_size' => 1,
+                'show_all' => true,
+                'end_size' => 2,
                 'mid_size' => 2,
                 'type' => 'list'
             )); ?>
