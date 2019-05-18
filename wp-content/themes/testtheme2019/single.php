@@ -3,9 +3,13 @@
     <!-- <h2>Test</h2> -->
     <div class="container">
         <div class="row">
+            <!-- Оборачивание для сайдбара и виджетов в сингле -->
+            <div class="col">
+            <div class="row">
+            <!-- Отдельный пост -->
             <?php while ( have_posts() ) : the_post(); ?>
-        <!-- Посты -->
-        <div class="col-md-12">
+            <!-- Посты -->
+            <div class="col-md-12">
             <div class="card">
             <!-- Вывод миниатюры в single -->
             <?php if (has_post_thumbnail()) : ?>
@@ -25,9 +29,14 @@
                 <!-- Линки -->
                 <p class="card-text"><?php the_content(''); ?></p>
                 </div>
+                </div>
             </div>
-        </div>
+            <!-- Конец цикла -->
             <?php endwhile; ?>
+            </div>
+            </div>
+            <!-- Колонки sidebar -->
+            <?php get_sidebar(); ?>
         </div>
     </div>
 <?php get_footer();?>

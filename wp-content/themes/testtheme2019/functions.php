@@ -67,6 +67,10 @@ function testtheme2019_widgets_init(){
         'name' => 'Правый sidebar',
         'id' => 'right-sidebar',
         'description' => 'Область для виджетов правого sidebar',
+        'class' => 'Tested_Widget',
+        //Для виджетов, из кодекса
+        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'after_widget' => "</div>\n",
     ));
 }
 
