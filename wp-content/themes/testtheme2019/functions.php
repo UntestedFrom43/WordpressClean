@@ -24,3 +24,13 @@ add_filter( 'intermediate_image_sizes', 'delete_intermediate_image_sizes' );
             'medium_large'
         ));
     }
+
+//Хук для поддержки изображений миниатюр, параметры
+function testtheme2019_setup(){
+    //Добавление возможности прикрепления миниатюры к посту.
+    add_theme_support('post_thumbnails');
+    //Функция мультиформатов для изображений;
+    //Собственный тип миниатюр; регистрация
+    add_image_size('my-thumbname', 100, 100);
+}
+add_action('after_setup_theme', 'testtheme2019_setup');

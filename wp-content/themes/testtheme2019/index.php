@@ -7,7 +7,16 @@
         <!-- Посты -->
         <div class="col-md-12">
             <div class="card">
-            <img src="..." class="card-img-top" alt="Место для миниатюры">
+            <!-- Функция на проверку прикрепления img -->
+            <?php if (has_post_thumbnail()) : ?>
+            <!-- Функция вывода -->
+                <?php the_post_thumbnail('thumbnail'); ?>
+            <!-- Проверяем -->
+                <?php else: ?>
+                <!-- По умолчанию при отсутствии full-версии -->
+                <img src="https://picsum.photos/id/1/150/150" width="150" height="150" alt="demo_img">
+            <?php endif; ?>
+            <!-- <img src="..." class="card-img-top" alt="Место для миниатюры"> -->
             <!-- Карточки постов -->
                 <div class="card-body">            
                 <h5 class="card-title">
