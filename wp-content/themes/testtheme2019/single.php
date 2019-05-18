@@ -1,6 +1,6 @@
 <!-- Single-шаблон для статьи -->
 <?php get_header(); ?>
-    <h2>Test</h2>
+    <!-- <h2>Test</h2> -->
     <div class="container">
         <div class="row">
             <?php while ( have_posts() ) : the_post(); ?>
