@@ -34,6 +34,8 @@
             'menu_class' => 'navbar-nav mr-auto',
             //Параметры изменения меню через класс Walker
             'walker' => new Testtheme2019_Menu,
+            // Drop-меню
+            'container_id' => 'navbarSupportedContent',
        ) );
     ?>
 

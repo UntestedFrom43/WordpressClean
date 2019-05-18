@@ -60,3 +60,14 @@ function my_navigation_template( $template, $class ){
 
 //Класс Walker для подключения в модуле класса
 require_once __DIR__ . '/Testtheme2019_Menu.php';
+
+//Функция, регистрация и хуки для sidebar
+function testtheme2019_widgets_init(){
+    register_sidebar(array(
+        'name' => 'Правый sidebar',
+        'id' => 'right-sidebar',
+        'description' => 'Область для виджетов правого sidebar',
+    ));
+}
+
+add_action('widgets_init', 'testtheme2019_widgets_init');

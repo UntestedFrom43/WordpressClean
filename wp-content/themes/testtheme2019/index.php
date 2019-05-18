@@ -3,13 +3,16 @@
     <!-- <h2>Main</h2> -->
     <div class="container">
         <div class="row">
+        <!-- Заготовка под сайдбар -->
+        <div class="col">
+            <div class="row">
             <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
         <!-- Посты -->
-        <div class="col-md-12">
-            <div class="card">
-            <div class="card-header">
+            <div class="col-md-12">
+                <div class="card">
+                <div class="card-header">
             <!-- Title -->
-            <h5 class="card-title">
+                <h5 class="card-title">
                     <a href="<?php the_permalink(); ?>">
                         <?php the_title(); ?>
                     </a>
@@ -47,7 +50,11 @@
             <?php else: ?>
             <!-- Постов нет -->
             <p>No post in there...</p>
-            <?php endif; ?>    
+            <?php endif; ?>   
+            </div>
+        </div>
+        <!-- Колонки sidebar -->
+            <?php get_sidebar(); ?>
         </div>
     </div>
     <?php get_footer();?>
