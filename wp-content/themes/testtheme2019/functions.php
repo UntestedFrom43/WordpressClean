@@ -57,3 +57,6 @@ function my_navigation_template( $template, $class ){
 		    <div class="nav-links">%3$s</div>
 	        </nav>';
 }
+
+//Класс Walker для подключения в модуле класса
+require_once __DIR__ . '/Testtheme2019_Menu.php';

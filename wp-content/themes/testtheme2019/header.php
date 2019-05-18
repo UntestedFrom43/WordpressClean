@@ -20,9 +20,8 @@
     class="navbar-brand" href="<?php echo home_url(); ?>">
         <?php echo bloginfo('name'); ?>
     </a>
-        <span class="desc"><?php echo bloginfo('description'); ?></span>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
     </button>
 
     <!-- Вызов меню header -->
@@ -32,6 +31,9 @@
             //'menu' => '',
             //'container' => 'nav',
             'container_class' => 'collapse navbar-collapse',
+            'menu_class' => 'navbar-nav mr-auto',
+            //Параметры изменения меню через класс Walker
+            'walker' => new Testtheme2019_Menu,
        ) );
     ?>
 
