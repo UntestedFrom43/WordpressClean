@@ -9,9 +9,16 @@
 </head>
 <!-- Для корректной работы bg и сопутствующего кастома -->
 <body <?php body_class(); ?>>
-
+<!-- Проверка условия для custom_header -->
+    <?php if(is_front_page()): ?>
+<!-- Вывод custom_header -->
+    <div class="header-image" style="
+    background: url(<?php echo get_custom_header()->url; ?>)
+    center no-repeat; background-size: cover; height: 50vh">
+    </div>
     <!-- Вывод информации по параметрам -->
     <!-- место для echo -->
+    <?php endif; ?>
 
 <!-- Навигация -->
 <div class="wrapper">

@@ -49,7 +49,14 @@ function testtheme2019_setup(){
         'default-color' => 'f586cc',
         //'default-image' => 'get_template_directory_uri() . '/assets/img/background.png',
     ));
+    //Функция для кастомайзера custom-header
+    add_theme_support('custom-header', array(
+        'default-image' => get_template_directory_uri() . '/assets/img/wallhaven-580293.png',
+        'width' => '1024',
+        'height' => '768',   
+    ));
 }
+// Запуск
 add_action('after_setup_theme', 'testtheme2019_setup');
 
 //Удаление H2 для SEO
