@@ -39,6 +39,16 @@ function testtheme2019_setup(){
         'header_menu' => 'Меню header',
         'footer_menu' => 'Меню footer',
     ) );
+    //Функция для кастомайзера под логотип
+    add_theme_support('custom-logo', array(
+        'width' => '150',
+        'height' => '40',
+    ));
+    //Функция для кастомайзера background
+    add_theme_support('custom-background', array(
+        'default-color' => 'f586cc',
+        //'default-image' => 'get_template_directory_uri() . '/assets/img/background.png',
+    ));
 }
 add_action('after_setup_theme', 'testtheme2019_setup');
 

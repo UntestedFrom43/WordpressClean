@@ -7,7 +7,8 @@
     <!-- Динамический тайтл -->
     <?php wp_head(); ?>
 </head>
-<body>
+<!-- Для корректной работы bg и сопутствующего кастома -->
+<body <?php body_class(); ?>>
 
     <!-- Вывод информации по параметрам -->
     <!-- место для echo -->
@@ -15,11 +16,16 @@
 <!-- Навигация -->
 <div class="wrapper">
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <!-- Описание и название -->
-    <a 
-    class="navbar-brand" href="<?php echo home_url(); ?>">
-        <?php echo bloginfo('name'); ?>
-    </a>
+    <!-- Проверка на наличие логотипа -->
+    <?php if( has_custom_logo() ) : the_custom_logo(); ?>
+        <?php else: ?>
+        <!-- Описание и название -->
+        <a class="navbar-brand" 
+            href="<?php echo home_url(); ?>">
+            <?php echo bloginfo('name'); ?>
+        </a>
+        <?php endif; ?>
+
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
     </button>
