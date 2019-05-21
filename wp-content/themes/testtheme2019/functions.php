@@ -25,11 +25,11 @@ add_filter( 'intermediate_image_sizes', 'delete_intermediate_image_sizes' );
         ));
     }
 
-//Хук для поддержки изображений миниатюр, параметры
+//Функция для поддержки изображений миниатюр, параметры
 function testtheme2019_setup(){
     //Добавление возможности прикрепления миниатюры к посту.
     add_theme_support('post_thumbnails');
-    //Функция мультиформатов для изображений;
+    //Функция мультиформатов для изображений
     //Собственный тип миниатюр; регистрация
     add_image_size('my-thumbname', 100, 100);
     //Поддержка тайтла
@@ -90,5 +90,43 @@ function testtheme2019_widgets_init(){
         'after_widget' => "</div>\n",
     ));
 }
-
+//Запуск 
 add_action('widgets_init', 'testtheme2019_widgets_init');
+
+//Customizer - можно вынести в отдельный модуль
+function testtheme2019_customize_register($wp_customize){
+    //Работа с секцией, элементами, блоком управления
+    //Цвет для ссылок;
+    $wp_customize->add_setting('testtheme2019_link_color', array(
+        'default' => '#007bff',
+        'sanitize_callback' => 'sanitize_hex_color',
+    ));
+    //Элемент управления
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+            $wp_customize,
+            'testtheme2019_link_color',
+            array(
+                'label' => 'Цвет ссылок',
+                'section' => 'colors',
+                'setting' => 'testtheme2019_link_color',
+            )
+        )
+    );
+}
+//Запуск
+add_action('customize_register', 'testtheme2019_customize_register');
+
+//Функция запуска кастомного css
+function testtheme2019_customize_css(){
+    // Получаем данные из css
+    $testtheme2019_link_color = get_theme_mod('testtheme2019_link_color');
+    // here синтаксис
+    echo <<<HEREDOC
+<style type="text/css">
+a { color: $testtheme2019_link_color; }
+</style>
+HEREDOC;
+}
+//Запуск
+add_action('wp_head', 'testtheme2019_customize_css');
