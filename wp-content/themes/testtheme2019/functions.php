@@ -115,6 +115,45 @@ function testtheme2019_customize_register($wp_customize){
             )
         )
     );
+
+    //Добавление новой секции
+    $wp_customize->add_section('testtheme2019_site_data', array(
+        title => 'Информация о сайте',
+        'priority' => 20,
+    ));
+    //Настройка для секции, на примере с телефоном
+    $wp_customize->add_setting('testtheme2019_phone', array(
+        'default' => '',
+        //Асинхронное обновление
+        'transport' => 'postMessage',
+    ));
+    //Элемент управления секцией
+    $wp_customize->add_control(
+        'testtheme2019_phone',
+        array(
+            'label' => 'Контактный телефон',
+            'section' => 'testtheme2019_site_data',
+            'type' => 'text',            
+        )
+    );
+
+    // Новая опция для отображения номера телефона
+    //Настройка для секции, на примере с телефоном
+    $wp_customize->add_setting('testtheme2019_show_phone', array(
+        //Чекбокс отмечен
+        'default' => true,
+        //Асинхронное обновление
+        'transport' => 'postMessage',
+    ));
+    //Элемент управления секцией
+    $wp_customize->add_control(
+        'testtheme2019_show_phone',
+        array(
+            'label' => 'Показать контактный номер?',
+            'section' => 'testtheme2019_site_data',
+            'type' => 'checkbox',            
+        )
+    );
 }
 //Запуск
 add_action('customize_register', 'testtheme2019_customize_register');
@@ -139,3 +178,5 @@ function testtheme2019_customize_js(){
 }
 //Запуск
 add_action('customize_preview_init', 'testtheme2019_customize_js');
+
+//Добавление новой секции

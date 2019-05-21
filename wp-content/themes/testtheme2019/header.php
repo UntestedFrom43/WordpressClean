@@ -37,13 +37,14 @@
             <span class="navbar-toggler-icon"></span>
     </button>
 
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <!-- Вызов меню header -->
     <?php 
         wp_nav_menu( array(
             'theme_location' => 'header_menu',
             //'menu' => '',
-            //'container' => 'nav',
-            'container_class' => 'collapse navbar-collapse',
+            'container' => '',
+            // 'container_class' => 'collapse navbar-collapse',
             'menu_class' => 'navbar-nav mr-auto',
             //Параметры изменения меню через класс Walker
             'walker' => new Testtheme2019_Menu,
@@ -51,6 +52,11 @@
             'container_id' => 'navbarSupportedContent',
        ) );
     ?>
+    <!-- Проверка чекбокса для отображения номера -->
+        <p class="testtheme2019-phone" <?php if(false === get_theme_mod('testtheme2019_show_phone')); echo ' style="display: none;"'?> >
+            Мой контактный телефон: <span><?php echo get_theme_mod('testtheme2019_phone');?></span>
+        </p>
+    </div>
 
     <!-- <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
