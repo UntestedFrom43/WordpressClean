@@ -54,8 +54,8 @@ function testtheme2019_setup(){
     //Функция для кастомайзера custom-header
     add_theme_support('custom-header', array(
         'default-image' => get_template_directory_uri() . '/assets/img/wallhaven-580293.png',
-        'width' => '1024',
-        'height' => '768',   
+        'width' => '1920',
+        'height' => '1080',   
     ));
 }
 // Запуск

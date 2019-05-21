@@ -57,4 +57,30 @@
             <?php get_sidebar(); ?>
         </div>
     </div>
+
+    <!-- Выборка категорий -->
+    <?php 
+    //$query = new WP_Query('cat=54&posts_per_page=-1'); 
+    $query = new WP_Query(array(
+        'category_name' => 'uncategorized',
+        //'cat' => '54',
+        'posts_per_page'=> '-1',
+        'orderby' => 'title',
+        'order' => 'DESC',
+    )); 
+    ?>
+    <!-- Посты -->
+        <?php if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post(); ?>
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title"><?php the_title();?></h5>
+                </div>
+            </div>
+        <?php endwhile; ?>
+    <!-- Навигация -->
+        <?php else: ?>
+    <!-- Посты не найдены -->
+        <?php endif; ?>
+    <?php wp_reset_postdata(); ?>
+
     <?php get_footer();?>
