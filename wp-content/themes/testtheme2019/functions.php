@@ -100,6 +100,8 @@ function testtheme2019_customize_register($wp_customize){
     $wp_customize->add_setting('testtheme2019_link_color', array(
         'default' => '#007bff',
         'sanitize_callback' => 'sanitize_hex_color',
+        //Асинхронное обновление
+        'transport' => 'postMessage',
     ));
     //Элемент управления
     $wp_customize->add_control(
@@ -130,3 +132,10 @@ HEREDOC;
 }
 //Запуск
 add_action('wp_head', 'testtheme2019_customize_css');
+
+//Подключение js-файла для live-preview
+function testtheme2019_customize_js(){
+    wp_enqueue_script('testtheme2019-customizer', get_template_directory_uri() . '/assets/js/testtheme2019-customize.js', array( 'jquery','customize-preview' ),	'', true);
+}
+//Запуск
+add_action('customize_preview_init', 'testtheme2019_customize_js');
