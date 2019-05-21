@@ -27,6 +27,8 @@ add_filter( 'intermediate_image_sizes', 'delete_intermediate_image_sizes' );
 
 //Функция для поддержки изображений миниатюр, параметры
 function testtheme2019_setup(){
+    //Добавление функций локализации
+    load_theme_textdomain('testtheme2019', get_template_directory() . '/languages');
     //Добавление возможности прикрепления миниатюры к посту.
     add_theme_support('post_thumbnails');
     //Функция мультиформатов для изображений
@@ -36,8 +38,8 @@ function testtheme2019_setup(){
     add_theme_support('title-tag');
     //Регистрация новых меню
     register_nav_menus( array(
-        'header_menu' => 'Меню header',
-        'footer_menu' => 'Меню footer',
+        'header_menu' => __('Меню header', 'testtheme2019'),
+        'footer_menu' => __('Меню footer', 'testtheme2019'),
     ) );
     //Функция для кастомайзера под логотип
     add_theme_support('custom-logo', array(
@@ -81,9 +83,9 @@ require_once __DIR__ . '/Testtheme2019_Menu.php';
 //Функция, регистрация и хуки для sidebar
 function testtheme2019_widgets_init(){
     register_sidebar(array(
-        'name' => 'Правый sidebar',
+        'name' => __('Правый sidebar', 'testtheme2019'),
         'id' => 'right-sidebar',
-        'description' => 'Область для виджетов правого sidebar',
+        'description' => __('Область для виджетов правого sidebar', 'testtheme2019'),
         'class' => 'Tested_Widget',
         //Для виджетов, из кодекса
         'before_widget' => '<div id="%1$s" class="widget %2$s">',
@@ -109,7 +111,7 @@ function testtheme2019_customize_register($wp_customize){
             $wp_customize,
             'testtheme2019_link_color',
             array(
-                'label' => 'Цвет ссылок',
+                'label' => __('Цвет ссылок', 'testtheme2019'),
                 'section' => 'colors',
                 'setting' => 'testtheme2019_link_color',
             )
@@ -118,7 +120,7 @@ function testtheme2019_customize_register($wp_customize){
 
     //Добавление новой секции
     $wp_customize->add_section('testtheme2019_site_data', array(
-        title => 'Информация о сайте',
+        title => __('Информация о сайте', 'testtheme2019'),
         'priority' => 20,
     ));
     //Настройка для секции, на примере с телефоном
@@ -131,7 +133,7 @@ function testtheme2019_customize_register($wp_customize){
     $wp_customize->add_control(
         'testtheme2019_phone',
         array(
-            'label' => 'Контактный телефон',
+            'label' => __('Контактный телефон', 'testtheme2019'),
             'section' => 'testtheme2019_site_data',
             'type' => 'text',            
         )
@@ -149,7 +151,7 @@ function testtheme2019_customize_register($wp_customize){
     $wp_customize->add_control(
         'testtheme2019_show_phone',
         array(
-            'label' => 'Показать контактный номер?',
+            'label' => __('Показать контактный номер?', 'testtheme2019'),
             'section' => 'testtheme2019_site_data',
             'type' => 'checkbox',            
         )

@@ -35,7 +35,7 @@
                 </div>
             <!-- Footer -->
             <div class="card-footer">
-                <a href="<?php the_permalink(); ?>" class="btn btn-primary">Перейти в статью</a>
+                <a href="<?php the_permalink(); ?>" class="btn btn-primary"><?php _e('Перейти в статью', 'testtheme2019')?></a>
             </div>
             </div>
         </div>
@@ -49,7 +49,7 @@
             )); ?>
             <?php else: ?>
             <!-- Постов нет -->
-            <p>No post in there...</p>
+            <p>Постов нет :(</p>
             <?php endif; ?>   
             </div>
         </div>
