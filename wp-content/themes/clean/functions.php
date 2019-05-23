@@ -42,6 +42,19 @@ if ( ! function_exists( 'clean_setup' ) ) :
 		 */
 		add_theme_support( 'post-thumbnails' );
 
+		//Поддержка других форматов постов;
+		add_theme_support( 'post-formats', array( 
+			'aside', 
+			'gallery', 
+			'link', 
+			'image', 
+			'quote',
+			'status',
+			'video',
+			'audio',
+			'chat', 
+			) );
+
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
 			'menu-1' => esc_html__( 'Primary', 'clean' ),
