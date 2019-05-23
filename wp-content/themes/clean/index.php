@@ -12,47 +12,37 @@
  * @package clean
  */
 
-get_header();
+	get_header();
 ?>
-
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
-
-		<?php
-		if ( have_posts() ) :
-
-			if ( is_home() && ! is_front_page() ) :
-				?>
-				<header>
-					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-				</header>
-				<?php
-			endif;
-
-			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
-
-				/*
-				 * Include the Post-Type-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_type() );
-
-			endwhile;
-
-			the_posts_navigation();
-
-		else :
-
-			get_template_part( 'template-parts/content', 'none' );
-
-		endif;
-		?>
-
-		</main><!-- #main -->
-	</div><!-- #primary -->
+	<!-- //Отработка секции// -->
+	<div id="fh5co-portfolio">
+		<!-- Передаем рубрику -->
+		<?php $query = new WP_Query(array(
+			'category_name' => 'home',
+		));?>
+		<!-- Запуск цикла постов -->
+		<?php if ( $query->have_posts() ) : $i = 1; while ( $query->have_posts() ) : $query->the_post(); ?>
+			<!-- В случае отсутствия миниатюры/изображения к посту/ -->
+			<?php if( has_post_thumbnail($post) ){ $img_url = get_the_post_thumbnail_url($post, $size); }else{ $img_url = 'https://picsum.photos/1280/864?grayscale'; }?>
+			<!-- Посты -->
+			<!-- Реализация счетчика на каждый второй пост, dynamic classes -->
+			<div class="fh5co-portfolio-item <?php if( $i % 2 == 0 ) echo 'fh5co-img-right'; ?>">
+				<div class="fh5co-portfolio-figure animate-box" style="background-image: url(<?php echo $img_url; ?>);"></div>
+				<div class="fh5co-portfolio-description">
+					<h2> <?php the_title($before, $after, $echo); ?> </h2>
+					<p> <?php the_content('', $strip_teaser); ?> </p>
+					<p><a href="<?php the_permalink($post);?>" class="btn btn-primary"> <?php _e('Read more', 'clean');?> </a></p>
+				</div>
+			</div>
+			<?php $i++; endwhile; ?>
+			<!-- Условие -->
+			<?php else: ?>
+            <?php _e('Nothing to read :(', 'clean');?>
+			<!-- Завершение -->
+			<?php endif; ?>
+			<!-- Обязательно сбросить данные постов, чтобы не было лишнего кеширования -->
+			<?php wp_reset_postdata(); ?>
+	</div>
 
 <?php
 //get_sidebar();
