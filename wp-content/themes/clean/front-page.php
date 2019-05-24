@@ -14,6 +14,9 @@
 
 	get_header();
 ?>
+
+<!-- <span>FRONT</span> -->
+
 <?php if( is_front_page() && get_theme_mod('clean_home_category', $default) ): ?>
 	<!-- //Отработка секции// -->
 	<div id="fh5co-portfolio">
@@ -45,6 +48,17 @@
 			<?php wp_reset_postdata(); ?>
 	</div>
 <?php endif; ?>
+
+<!-- Вывод контента страницы -->
+    <!-- цикл контента -->
+    <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+    <!-- контент, вывод -->
+        <?php the_content($more_link_text, $strip_teaser); ?>
+    <?php endwhile; ?>
+    <!-- Навигация -->
+    <?php else: ?>
+    <!-- Посты не найдены -->
+    <?php endif; ?>
 
 <?php
 //get_sidebar();
