@@ -17,7 +17,7 @@
 
 <!-- <span>FRONT</span> -->
 
-<?php if( is_front_page() && get_theme_mod('clean_home_category', $default) ): ?>
+<?php if( /*is_front_page()*/ /*&&*/ get_theme_mod('clean_home_category', $default) ): ?>
 	<!-- //Отработка секции// -->
 	<div id="fh5co-portfolio">
 		<!-- Передаем рубрику -->
