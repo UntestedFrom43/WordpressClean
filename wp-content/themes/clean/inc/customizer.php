@@ -25,6 +25,27 @@ function clean_customize_register( $wp_customize ) {
 			'render_callback' => 'clean_customize_partial_blogdescription',
 		) );
 	}
+
+	//Добавление новой секции Clean
+    $wp_customize->add_section('clean_theme_options', array(
+        title => __('Theme Options', 'clean'),
+        'priority' => 20,
+    ));
+    //Настройка для секции, на примере с телефоном
+    $wp_customize->add_setting('clean_home_category', array(
+        'default' => '',
+        //Асинхронное обновление
+        //'transport' => 'postMessage',
+    ));
+    //Элемент управления секцией
+    $wp_customize->add_control(
+        'clean_home_category',
+        array(
+            'label' => __('Category on Home Page', 'clean'),
+            'section' => 'clean_theme_options',
+            'type' => 'text',            
+        )
+    );
 }
 add_action( 'customize_register', 'clean_customize_register' );
 
