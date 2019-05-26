@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Clean_s 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/tags/_s\n"
-"POT-Creation-Date: 2019-05-24 18:21+0300\n"
-"PO-Revision-Date: 2019-05-24 18:28+0300\n"
+"POT-Creation-Date: 2019-05-26 21:53+0300\n"
+"PO-Revision-Date: 2019-05-26 21:54+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ru_RU\n"
@@ -49,11 +49,183 @@ msgstr "Один комментарий о &ldquo;%1$s&rdquo;"
 msgid "Comments are closed."
 msgstr "Комментарии закрыты."
 
-#: front-page.php:38 index.php:35
+#: framework-customizations/extensions/shortcodes/shortcodes/icon-box/config.php:6
+msgid "Icon Box"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/icon-box/config.php:7
+msgid "Add an Icon Box"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/icon-box/config.php:8
+#: framework-customizations/extensions/shortcodes/shortcodes/icon/config.php:8
+msgid "Content Elements"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/icon-box/options.php:8
+msgid "Box Style"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/icon-box/options.php:10
+msgid "Icon above title"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/icon-box/options.php:11
+msgid "Icon in line with title"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/icon-box/options.php:16
+msgid "Choose an Icon"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/icon-box/options.php:20
+msgid "Title of the Box"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/icon-box/options.php:24
+msgid "Content"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/icon-box/options.php:25
+msgid "Enter the desired content"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/icon/config.php:6
+#: framework-customizations/extensions/shortcodes/shortcodes/icon/options.php:8
+msgid "Icon"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/icon/config.php:7
+msgid "Add an Icon"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/icon/options.php:12
+msgid "Title"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/icon/options.php:13
+msgid "Icon title"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/icon/options.php:17
+msgid "Custom Icon URL"
+msgstr "Пользовательский URL для иконки"
+
+#: framework-customizations/extensions/shortcodes/shortcodes/icon/options.php:18
+msgid "Insert Custom Icon url to this icon"
+msgstr "Ввести пользовательский URL для ссылки от данной иконки"
+
+#: framework-customizations/extensions/shortcodes/shortcodes/section/class-fw-shortcode-section.php:43
+#: framework-customizations/extensions/shortcodes/shortcodes/section/config.php:5
+msgid "Layout Elements"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/section/class-fw-shortcode-section.php:44
+#: framework-customizations/extensions/shortcodes/shortcodes/section/config.php:6
+msgid "Section"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/section/class-fw-shortcode-section.php:45
+msgid "Creates a section"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/section/class-fw-shortcode-section.php:86
+msgid "Edit"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/section/class-fw-shortcode-section.php:87
+msgid "Duplicate"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/section/class-fw-shortcode-section.php:88
+msgid "Remove"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/section/class-fw-shortcode-section.php:89
+msgid "Collapse"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/section/config.php:7
+msgid "Add a Section"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/section/includes/template-component/class-fw-ext-builder-templates-component-section.php:12
+msgid "Sections"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/section/includes/template-component/class-fw-ext-builder-templates-component-section.php:60
+msgid "No Templates Saved"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/section/includes/template-component/class-fw-ext-builder-templates-component-section.php:63
+msgid "Load Template"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/section/includes/template-component/class-fw-ext-builder-templates-component-section.php:104
+msgid "Template Name"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/section/includes/template-component/class-fw-ext-builder-templates-component-section.php:105
+msgid "Save Section"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/section/includes/template-component/class-fw-ext-builder-templates-component-section.php:106
+msgid "Save as Template"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/section/includes/template-component/class-fw-ext-builder-templates-component-section.php:188
+msgid "No Title"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/section/options.php:7
+msgid "Full Width"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/section/options.php:11
+msgid "Background Color"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/section/options.php:12
+msgid "Please select the background color"
+msgstr "Пожалуйста, выберите фоновый цвет"
+
+#: framework-customizations/extensions/shortcodes/shortcodes/section/options.php:16
+msgid "Background Image"
+msgstr "Фоновое изображение"
+
+#: framework-customizations/extensions/shortcodes/shortcodes/section/options.php:17
+msgid "Please select the background image"
+msgstr "Пожалуйста, выберите фоновое изображение"
+
+#: framework-customizations/extensions/shortcodes/shortcodes/section/options.php:23
+msgid "Background Video"
+msgstr "Фоновое видео"
+
+#: framework-customizations/extensions/shortcodes/shortcodes/section/options.php:24
+msgid "Insert Video URL to embed this video"
+msgstr "Вставить URL-адрес видео для вставки этого видео"
+
+#: framework-customizations/extensions/shortcodes/shortcodes/section/options.php:29
+msgid "Custom ID"
+msgstr "Пользовательский ID"
+
+#: framework-customizations/extensions/shortcodes/shortcodes/section/options.php:30
+msgid "Insert Custom ID to this section"
+msgstr "Вставить пользовательский идентификатор в этот раздел"
+
+#: framework-customizations/extensions/shortcodes/shortcodes/section/options.php:34
+msgid "Custom Class"
+msgstr "Пользовательский класс"
+
+#: framework-customizations/extensions/shortcodes/shortcodes/section/options.php:35
+msgid "Insert Custom Class to embed this section"
+msgstr "Установить пользовательский класс для настройки этого раздела"
+
+#: front-page.php:38 index.php:31
 msgid "Read more"
 msgstr "Читать далее"
 
-#: front-page.php:44 index.php:41
+#: front-page.php:44 index.php:37
 msgid "Nothing to read :("
 msgstr "Нечего не читать:("
 
