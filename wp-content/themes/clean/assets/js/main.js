@@ -95,9 +95,23 @@
 
     // Animate Feature
     //Origin
+    // var animateFeatureIcons = function() {
+    //     if ($('#fh5co-services').length > 0) {
+    //         $('#fh5co-services .to-animate').each(function(k) {
+
+    //             var el = $(this);
+
+    //             setTimeout(function() {
+    //                 el.addClass('bounceIn animated');
+    //             }, k * 200, 'easeInOutExpo');
+
+    //         });
+    //     }
+    // };
+    // Custom
     var animateFeatureIcons = function() {
         if ($('#fh5co-services').length > 0) {
-            $('#fh5co-services .to-animate').each(function(k) {
+            $('#fh5co-services .fw-iconbox-image').each(function(k) {
 
                 var el = $(this);
 
@@ -108,6 +122,7 @@
             });
         }
     };
+
 
     var featureIconsWayPoint = function() {
         if ($('#fh5co-services').length > 0) {
