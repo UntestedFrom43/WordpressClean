@@ -1,3 +1,4 @@
+<!-- tested -->
 <?php
 /**
  * The main template file
@@ -20,17 +21,19 @@
 <?php if( /*is_front_page()*/ /*&&*/ get_theme_mod('clean_home_category', $default) ): ?>
 	<!-- //Отработка секции// -->
 	<div id="fh5co-portfolio">
-		<!-- Передаем рубрику -->
-		<?php $query = new WP_Query(array(
-			'category_name' => get_theme_mod('clean_home_category', $default),
-			//Чтобы выводилось больше записей в обход условия админки
-			'posts_per_page' => 4,
-		));?>
+		
 		<!-- Запуск цикла постов -->
-		<?php if ( $query->have_posts() ) : $i = 1; while ( $query->have_posts() ) : $query->the_post(); ?>
-				<!-- Подключаем модуль -->
+		<?php if ( have_posts() ) : $i = 1; while ( have_posts() ) : the_post(); ?>
+			<!-- Подключаем модуль -->
 				<?php get_template_part('template-parts/content', 'preview');?>
 			<?php $i++; endwhile; ?>
+            <!-- Пагинация -->
+            <?php the_posts_pagination(array(
+                // Параметры
+                'end_size' => 1,
+                'mid_size' => 1,
+                'type' => 'list',
+            )); ?>
 			<!-- Условие -->
 			<?php else: ?>
             <?php _e('Nothing to read :(', 'clean');?>
@@ -42,17 +45,6 @@
 	<!-- Сброс float -->
 	<div class="clearfix"></div>
 <?php endif; ?>
-
-<!-- Вывод контента страницы -->
-    <!-- цикл контента -->
-    <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-    <!-- контент, вывод -->
-        <?php the_content($more_link_text, $strip_teaser); ?>
-    <?php endwhile; ?>
-    <!-- Навигация -->
-    <?php else: ?>
-    <!-- Посты не найдены -->
-    <?php endif; ?>
 
 <?php
 //get_sidebar();

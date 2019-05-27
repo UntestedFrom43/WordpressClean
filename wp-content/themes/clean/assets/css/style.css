@@ -9296,3 +9296,29 @@ a>img.fh5co-align-center {
 a.btn:visited {
     color: #fff;
 }
+
+
+/* Пагинация */
+
+.pagination {
+    text-align: center;
+    width: 100%;
+}
+
+.pagination li {
+    display: inline-block;
+}
+
+.pagination li a,
+.pagination li span {
+    color: #000;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.pagination li span.current {
+    color: #f9f6f0;
+    background-color: #e32929;
+}
