@@ -4,6 +4,6 @@
 <img src="<?php echo $img_url;?>" alt="no image here">
 	<div class="fh5co-portfolio-description">
 		<h2> <?php the_title($before, $after, $echo); ?> </h2>
-		STANDARD
+		VIDEO
 		<p> <?php the_content(); ?> </p>
 	</div>

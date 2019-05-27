@@ -144,7 +144,8 @@
     };
 
 
-
+    //Кастом анимации для параграфов
+    $('body.single .fh5co-portfolio-description p').addClass('animate-box');
 
 
 
